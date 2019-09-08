@@ -11,59 +11,60 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
+                        <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row border-bottom border-top border-danger py-3 my-3">
+            <div class="container-fluid text-center">     
+                <div class="container-fluid text-center my-2 py-2">     
+                    <ul class="list-inline mb-1">
+                        <li class="list-inline-item"> <h2>QR Code Schedule Checker</h2></li>
+                    </ul>
+                </div>
+              </div>
+        </div>  
+    </div>
+    <div class="col-sm-2"></div>
+  </div>    
+   <br>
+   <br>
+    <form>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="container-fluid text-left">  
+                <div class="form-group row-sm-4">
+                  <div class="row">
+                    <div class="col-sm-2">
+                     <i class="fa fa-user-circle"  style="font-size:55px;"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <input id="username" type="text" class="form-control" name="username" placeholder="Enter Username" style="height: 55px">
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+                 
+                <div class="form-group row-sm-4">
+                  <div class="row">
+                    <div class="col-sm-2">
+                        <i class="fa fa-lock"  style="font-size:55px;"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <input id="password" type="password" class="form-control ml-auto" name="password" placeholder="Password" style="height: 55px">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="login" class="btn btn-success">Log in</button>
+              
+        <button type="register" class="btn btn-primary">Register</button>
+      </div>
+</div>
+        <div class="col-sm-4"></div>
+      </div>  
+    </form>
                     </form>
                 </div>
             </div>
