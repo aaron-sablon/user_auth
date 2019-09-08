@@ -13,7 +13,7 @@ class CreateTimesTable extends Migration
      */
     public function up()
     {
-        Schema::create('time', function (Blueprint $table) {
+        Schema::create('times', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slot');
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateTimesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('time');
+        Schema::dropIfExists('times');
     }
 }
